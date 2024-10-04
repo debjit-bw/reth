@@ -355,6 +355,7 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
+    use alloy_eips::eip6110::DepositRequest;
     use alloy_primitives::U256;
     use reth_chainspec::MAINNET;
     use revm::db::{CacheDB, EmptyDBTyped};
@@ -528,8 +529,9 @@ mod tests {
 
     #[test]
     fn test_strategy() {
-        let expected_execute_transactions_result = (vec![], 1);
-        let expected_apply_post_execution_changes_result = vec![];
+        let expected_execute_transactions_result = (vec![Receipt::default()], 1);
+        let expected_apply_post_execution_changes_result =
+            vec![Request::DepositRequest(DepositRequest::default())];
         let expected_finish_result = BundleState::default();
 
         let strategy_factory = TestExecutorStrategyFactory {
