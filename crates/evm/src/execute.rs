@@ -6,7 +6,7 @@ pub use reth_execution_errors::{BlockExecutionError, BlockValidationError};
 pub use reth_execution_types::{BlockExecutionInput, BlockExecutionOutput, ExecutionOutcome};
 pub use reth_storage_errors::provider::ProviderError;
 
-use alloc::{sync::Arc, vec::Vec};
+use alloc::{boxed::Box, sync::Arc, vec::Vec};
 use alloy_primitives::BlockNumber;
 use core::fmt::Display;
 use reth_primitives::{BlockWithSenders, Receipt, Request};
