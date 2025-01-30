@@ -19,7 +19,7 @@ mod api;
 /// The chain info module.
 mod info;
 /// The chain spec module.
-mod spec;
+pub mod spec;
 
 pub use alloy_chains::{Chain, ChainKind, NamedChain};
 /// Re-export for convenience
